@@ -5,22 +5,56 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+}
+@theme {
+  --color-primary: #28a745;
+}
+
+/* Custom component styles from Clean Cuts Trees */
+@layer components {
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #218838;
+  }
+
+  .btn-secondary {
+    background-color: #3f0a00;
+    color: white;
+  }
+
+  .btn-secondary:hover {
+    background-color: #2a0700;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: #28a745;
+    border: 2px solid #28a745;
+  }
+
+  .btn-outline:hover {
+    background-color: #28a745;
+    color: white;
+  }
 }
